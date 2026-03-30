@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fffbf0;
+  --color-gold-100: #fef3d1;
+  --color-gold-200: #fce6a3;
+  --color-gold-300: #fad36b;
+  --color-gold-400: #f7bc32;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b8860b;
+  --color-gold-700: #94660a;
+  --color-gold-800: #75500c;
+  --color-gold-900: #614210;
+  --color-gold-950: #382205;
+
+  --color-dark-light: #1f1f1f;
+  --color-dark-DEFAULT: #0a0a0a;
+  --color-dark-card: #141414;
+
+  --font-sans: 'Poppins', sans-serif;
+  
+  --background-image-gold-gradient: linear-gradient(135deg, #d4af37 0%, #fce6a3 50%, #b8860b 100%);
+  --background-image-dark-gradient: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+@layer base {
+  :root {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #0a0a0a;
+    color: #f3f4f6;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-gold-500 text-black font-semibold rounded-full hover:bg-gold-400 transition-all duration-300 shadow-lg shadow-gold-500/20 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-3 border-2 border-gold-500 text-gold-500 font-semibold rounded-full hover:bg-gold-500 hover:text-black transition-all duration-300 active:scale-95;
+  }
+
+  .glass-card {
+    @apply bg-dark-card border border-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gold-gradient;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8860b;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
