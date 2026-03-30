@@ -32,10 +32,10 @@ const Verification = () => {
   };
 
   return (
-    <section id="verification" className="py-24 bg-dark relative overflow-hidden">
+    <section id="verification" className="section-padding bg-dark relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 blur-[150px] -z-10 rounded-full" />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-custom max-w-4xl">
         <div className="text-center mb-12">
           <motion.span
             initial={{ opacity: 0 }}
@@ -141,14 +141,14 @@ const Verification = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 + (idx * 0.1) }}
-                      className="flex items-start gap-4"
+                      className="flex items-start gap-3 sm:gap-4"
                     >
-                      <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-500 shadow-inner">
-                        <item.icon className="w-6 h-6" />
+                      <div className="flex-shrink-0 w-10 sm:w-12 h-10 sm:h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-500 shadow-inner">
+                        <item.icon className="w-5 sm:w-6 h-5 sm:h-6" />
                       </div>
-                      <div>
-                        <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">{item.label}</p>
-                        <h4 className="text-xl font-bold text-white">{item.value}</h4>
+                      <div className="min-w-0">
+                        <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest mb-1 truncate">{item.label}</p>
+                        <h4 className="text-lg sm:text-xl font-bold text-white truncate">{item.value}</h4>
                       </div>
                     </motion.div>
                   ))}

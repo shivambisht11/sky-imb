@@ -29,8 +29,8 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-dark-gradient relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="section-padding bg-dark-gradient relative">
+      <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             variants={containerVariants}
@@ -94,7 +94,7 @@ const Contact = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {contacts.map((contact, idx) => (
-              <motion.div key={idx} variants={itemVariants} className="glass-card p-8 border hover:border-gold-500/50 transition-all group">
+              <motion.div key={idx} variants={itemVariants} className="glass-card p-6 sm:p-8 border hover:border-gold-500/50 transition-all group">
                 <h4 className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">{contact.role}</h4>
                 <h3 className="text-xl font-bold text-white mb-6 leading-tight">{contact.name}</h3>
                 
@@ -115,7 +115,7 @@ const Contact = () => {
               </motion.div>
             ))}
             
-            <motion.div variants={itemVariants} className="bg-gold-500 p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+            <motion.div variants={itemVariants} className="bg-gold-500 p-6 sm:p-8 rounded-2xl flex flex-col justify-center items-center text-center">
               <h3 className="text-xl font-bold text-black mb-2 leading-tight">Apply Now</h3>
               <p className="text-black/70 text-sm mb-6 font-medium">Reserve your seat for the upcoming batch.</p>
               <a href="https://wa.me/919557795551" className="bg-black text-white px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform">

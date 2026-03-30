@@ -23,8 +23,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark/80 backdrop-blur-lg border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-dark/90 backdrop-blur-xl border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
+      <div className="container-custom">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
@@ -62,35 +62,40 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-dark-card border-b border-white/5 absolute top-full left-0 w-full"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-dark-card/95 backdrop-blur-2xl border-b border-white/10 absolute top-full left-0 w-full overflow-hidden shadow-2xl"
           >
-            <div className="px-4 pt-2 pb-6 space-y-1">
+            <div className="px-6 pt-4 pb-8 space-y-2">
               {navLinks.map((link) => (
-                <a
+                <motion.a
                   key={link.name}
                   href={link.href}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-gray-300 hover:text-gold-500 border-b border-white/5"
+                  className="block py-4 text-lg font-medium text-gray-300 hover:text-gold-500 border-b border-white/5 last:border-0 transition-colors"
                 >
                   {link.name}
-                </a>
+                </motion.a>
               ))}
-              <div className="pt-4 px-3">
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="pt-6"
+              >
                 <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full btn-primary block text-center"
+                  className="w-full btn-primary block text-center py-4 text-lg"
                 >
                   Apply Now
                 </a>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         )}

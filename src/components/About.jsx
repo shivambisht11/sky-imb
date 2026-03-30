@@ -4,11 +4,11 @@ import { Star, Shield, Globe, Award } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 bg-dark overflow-hidden">
+    <section id="about" className="relative section-padding bg-dark overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gold-500/5 blur-[120px] -z-10" />
       <div className="absolute bottom-0 left-0 w-1/4 h-full bg-gold-500/5 blur-[100px] -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text Content */}
           <motion.div
@@ -81,10 +81,10 @@ const About = () => {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-8 bg-gold-500 text-black p-8 rounded-3xl shadow-3xl max-w-[200px]"
+              className="absolute -bottom-6 sm:-bottom-8 -left-2 sm:-left-8 bg-gold-500 text-black p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-3xl max-w-[160px] sm:max-w-[200px]"
             >
-              <p className="text-3xl font-bold mb-1">100%</p>
-              <p className="text-xs font-bold uppercase tracking-widest leading-tight">Practical Oriented Program</p>
+              <p className="text-2xl sm:text-3xl font-bold mb-1">100%</p>
+              <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest leading-tight">Practical Oriented Program</p>
             </motion.div>
           </motion.div>
         </div>

@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="relative z-20 container-custom pt-20">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const Hero = () => {
             <span className="inline-block px-4 py-1.5 bg-gold-500/10 border border-gold-500/30 text-gold-500 rounded-full text-sm font-semibold mb-6 tracking-widest uppercase">
               Premier Bartending Institute
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl xs:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Become a <span className="text-gradient-gold">Professional Bartender</span> & Work Worldwide
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
@@ -35,12 +35,12 @@ const Hero = () => {
               real bar exposure, and a gateway to global career opportunities.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center gap-2 group"
+                className="btn-primary flex items-center justify-center gap-2 group"
               >
                 Apply Now
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -49,7 +49,7 @@ const Hero = () => {
                 href="#courses"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary flex items-center gap-2 group"
+                className="btn-secondary flex items-center justify-center gap-2 group"
               >
                 Explore Courses
               </motion.a>
@@ -60,19 +60,19 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="mt-16 flex items-center gap-8 border-t border-white/10 pt-8"
+            className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 border-t border-white/10 pt-8"
           >
             <div>
-              <p className="text-3xl font-bold text-gold-500">100%</p>
-              <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Placement Support</p>
+              <p className="text-2xl md:text-3xl font-bold text-gold-500">100%</p>
+              <p className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mt-1">Placement Support</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-gold-500">30+</p>
-              <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Real Bar Exposure</p>
+              <p className="text-2xl md:text-3xl font-bold text-gold-500">30+</p>
+              <p className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mt-1">Real Bar Exposure</p>
             </div>
-            <div>
-              <p className="text-3xl font-bold text-gold-500">ISO</p>
-              <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Certified Training</p>
+            <div className="col-span-2 md:col-span-1">
+              <p className="text-2xl md:text-3xl font-bold text-gold-500">ISO</p>
+              <p className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mt-1">Certified Training</p>
             </div>
           </motion.div>
         </div>
